@@ -1,0 +1,35 @@
+.loader {
+    border: 14px solid white;
+    border-top: 14px solid darkgreen;
+    border-bottom: 14px solid darkgreen;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    animation: load 1s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes load {
+    20%, 100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% {transform: rotate(-360deg); }
+}
+
+.smaller-loaader {
+    border: 10px solid white;
+    border-left: 10px solid darkgreen;
+    border-right: 10px solid darkgreen;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 10px 10px 10px 10px;
+    animation: spin 3s linear infinite;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
