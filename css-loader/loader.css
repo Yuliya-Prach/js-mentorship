@@ -1,11 +1,19 @@
-.loader {
-    border: 14px solid white;
-    border-top: 14px solid darkgreen;
-    border-bottom: 14px solid darkgreen;
-    border-radius: 50%;
+:root {
+    --green-solid-border: solid darkgreen;
+    --white-border: solid white;
+    --infinite-animation: linear infinite;
+    --cirlce-radius: 50%;
+}
+.loader:before {
+    display:block;
+    content: "";
+    border: 14px var(--white-border);
+    border-top: 14px var(--green-solid-border);
+    border-bottom: 14px var(--green-solid-border);
+    border-radius: var(--cirlce-radius);
     height: 100px;
     width: 100px;
-    animation: load 1s linear infinite;
+    animation: load 1s var(--infinite-animation);
     animation-delay: 2s;
 }
 
@@ -13,22 +21,28 @@
     20%, 100% {
         transform: rotate(360deg);
     }
+    90%, 100% {
+        filter: opacity(0%);
+    }
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
+    40%, 70% { filter: hue-rotate(110deg)}
     100% {transform: rotate(-360deg); }
 }
 
-.smaller-loaader {
-    border: 10px solid white;
-    border-left: 10px solid darkgreen;
-    border-right: 10px solid darkgreen;
-    border-radius: 50%;
+.loader:after {
+    display: block;
+    content: "";
+    border: 10px var(--white-border);
+    border-left: 10px var(--green-solid-border);
+    border-right: 10px var(--green-solid-border);
+    border-radius: var(--cirlce-radius);
     height: 50px;
     width: 50px;
     margin: 10px 10px 10px 10px;
-    animation: spin 3s linear infinite;
+    animation: spin 3s var(--infinite-animation);
     position: absolute;
     top: 25px;
     left: 25px;
